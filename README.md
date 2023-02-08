@@ -14,8 +14,8 @@ I'll try to get SimpleFOCStudio (SimpleFOC's GUI) running soon, too, so here's a
 ### Some notes: ###  
 - The repo is a collection of my platformio projects regarding this motor. That, and the C header file generated in the VESC Tool that gives all the motor and VESC control algorithm parameters. 
 - I didn't know if there was a .gitignore to include to stop any of my binaries etc from uploading, so just clean each project before you build it, and you should be good. Do let me know if there is a `.gitignore` I should include. 
-- _The only file that differs between projects is the main.cpp file_. No need to check every _platform.ini_.
-- A word of warning: this file gives the _line_ resistance and _line_ inductance, not the _phase_ resistance and _phase_ inductance; and the Lq-Ld _difference_, not the Lq/Ld _ratio_. Haven't examined much of the file yet, as I don't know which are relevant to SimpleFOC or where to insert them in my project.  
+- _The only file that differs between projects is the main.cpp file_. No need to check every _platform.ini_. Haven't examined much of the file yet, as I don't know which are relevant to SimpleFOC or where to insert them in my project.  
+- A word of warning: the VESC header file gives ~~the _line_ resistance and _line_ inductance, not~~ the _phase_ resistance and _phase_ inductance; and the Lq-Ld _difference_, not the Lq/Ld _ratio_. 
 
 ### My progress so far: ###
 - I've set up all my hardware and PlatformIO successfully, confirming that code can be compiled and uploaded to the board (LED blinks) and there is a serial monitor connection. This required modifying the platform.ini file a bit to what I saw in [**this tutorial**](https://youtu.be/ufMs83Y3sXg?t=79). I will point out that since the time of the tutorial's release, the B-G431B-ESC1 has become supported by PlatformIO, so maybe no build flags are needed. The working `platform.ini` files are found in this repo and are identical across all its project folders.  
