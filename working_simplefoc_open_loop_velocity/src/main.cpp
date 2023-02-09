@@ -32,7 +32,7 @@ void setup()
   current_sense.init(); //essential
   motor.linkCurrentSense(&current_sense); //essential
 
-  motor.current_limit = 15; // measured in Amps. IF THIS IS TOO LOW, YOUR MOTOR WON'T SPIN. REGARDLESS, START LOW (5% of rated current and move up to 10%, 20%, 30%, etc.) REQUIRES motor.phase_resistance to be set, which it is. 
+  motor.current_limit = 1.2; // measured in Amps. IF THIS IS TOO LOW, YOUR MOTOR WON'T SPIN. REGARDLESS, START LOW (5% of rated current and move up to 10%, 20%, 30%, etc.) REQUIRES motor.phase_resistance to be set, which it is. 
   // motor.voltage_limit = 0.05f; // do this OR motor.current_limit. current limit superior, in my humble opinion.
   motor.torque_controller = TorqueControlType::foc_current; //voltage mode should work. dc_current better. foc_current best. Thankfully, the STM32G4 on the B-G431B-ESC1 can do 170MHz so it can do foc_current, which needs lots of computation power.
   motor.controller = MotionControlType::velocity_openloop; //it's the name of this example and the identifying part of this setup/algorithm.
