@@ -22,11 +22,11 @@ I'll try to get SimpleFOCStudio (SimpleFOC's GUI) running soon, too, so here's a
 - I've gotten the hall sensor example from [**here**](https://youtu.be/ufMs83Y3sXg?t=320) to work.    
 - I've gotten motor.monitor working.
 - I've gotten the motor to spin with `MotionControlType::velocity_open_loop` (with `TorqueControlType:voltage`).
-- I haven't been able to get SimpleFOCStudio working yet. It takes a target, runs it for a second, and then resets target to 0 on its own. Peculiar.
-- I've gotten `MotionControlType::velocity` working (with `TorqueControlType:voltage`), but not reliably. Actually, the board heats up a concerning amount. Not sure what I'll do about it. Actually, the board heats up even when the motor is idle. I 
-- I've gotten temperature sensing to work, but not in a whole program. I think the ADC on pin PB14 might be shared with something else. I just get 0V, -49C.
-- I've yet to tune the PID parameters for closed loop velocity.
-- I've yet to tune the PID parameters for foc_current sensing.
+- I haven't been able to get SimpleFOCStudio working yet. It takes a target, runs it for a second, and then resets target to 0 on its own. Peculiar. **Not working on this right now**
+- I've gotten `MotionControlType::velocity` working (with `TorqueControlType:voltage`), but not reliably. Actually, the board heats up a concerning amount. Not sure what I'll do about it. Actually, the board heats up even when the motor is idle. I think I remember seeing somewhere that my motor has an idle current of 0.4A. Will confirm. **Working on this right now**
+- I've gotten temperature sensing to work, but not in a whole program. I think the ADC on pin PB14 might be shared with something else. I just get 0V, -49C. **Not working on this right now**
+- I've yet to tune the PID parameters for closed loop velocity. **Working on this right now**
+- I've yet to tune the PID parameters for foc_current sensing. **Not working on this right now**
 
 ### My questions so far: ###
 - ~~Does Serial Monitor reading and writing successfully mean that ST Link works properly? ~~What if it's just the ESC's daughterboard with its USB connector, LED, and potentiometer that are working, but not the mainboard? (Ridiculous, I know, since the STM32G4 chip is on the mainboard.)~~ Hall sensing works correctly, and that's done on the mainboard, so ST Link must be working correctly.~~ If you don't get an error during upload, you're ok. Ignore warnings like 
