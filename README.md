@@ -24,7 +24,7 @@ I'll try to get SimpleFOCStudio (SimpleFOC's GUI) running soon, too, so here's a
 - I've gotten the motor to spin with `MotionControlType::velocity_open_loop` (with `TorqueControlType:voltage`).
 - I haven't been able to get SimpleFOCStudio working yet. It takes a target, runs it for a second, and then resets target to 0 on its own. Peculiar. **Not working on this right now**
 - I've gotten `MotionControlType::velocity` working (with `TorqueControlType:voltage`), but not reliably. Actually, the board heats up a concerning amount. Not sure what I'll do about it. Actually, the board heats up even when the motor is idle. I think I remember seeing somewhere that my motor has an idle current of 0.4A. Will confirm. **Working on this right now**
-- I've gotten temperature sensing to work, but not in a whole program. I think the ADC on pin PB14 might be shared with something else. I just get 0V, -49C. **Not working on this right now**
+- I've gotten temperature sensing to work, but not in a whole program. I think the ADC on pin PB14 is shared with another pin and that other pin gets prioritized over PB14 or it's declared before PB14. Am I right? I just get 0V, -49C with the exact same `readTemp()` function. **Not working on this right now**
 - I've yet to tune the PID parameters for closed loop velocity. **Working on this right now**
 - I've yet to tune the PID parameters for foc_current sensing. **Not working on this right now**
 
